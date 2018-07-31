@@ -3,4 +3,6 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-# Register your models here.
+from parts.models import parts_url
+
+admin.site.register(parts_url)

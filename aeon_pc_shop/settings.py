@@ -25,7 +25,7 @@ SECRET_KEY = '$8eo^j!(jn8$fm_w5)39fvty9q*-_reu)4n(0i-v7*j4&j@smu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aeon-pc-shop-pius.c9users.io']
 
 
 # Application definition
@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'cart',
+    'checkout',
+    'crawler',
+    'home',
+    'parts',
 ]
 
 MIDDLEWARE = [
