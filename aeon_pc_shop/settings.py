@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crawler',
     'home',
     'parts',
+    'pc_builder',
 ]
 
 MIDDLEWARE = [

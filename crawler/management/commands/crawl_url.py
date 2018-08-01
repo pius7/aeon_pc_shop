@@ -15,7 +15,6 @@ class Command(BaseCommand):
         hardware = BeautifulSoup(hardwarerequest.text, 'html.parser')
         
         parts=defaultdict(list)
-        items=defaultdict(list)
         listparts=("Prozessor" ,"Grafikkarte", "Mainboard" , "Arbeitsspeicher" , "Festplatte", "Kühlung Luft", "Kühlung Wasser", "Gehäuse", "Laufwerke", "Netzteile", "SSD", "Netzwerk")
         
         # get urls and number of pages per category
