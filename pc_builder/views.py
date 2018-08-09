@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
-from parts.models import parts_url, part
+from parts.models import part
 import operator
 
 # Create your views here.
@@ -14,7 +14,7 @@ def start_builder(request):
 
 
 def select_parts(request):
-    all_products=parts_url.objects.filter(category="Gehäuse")
+    all_products=part.objects.filter(category="Gehäuse")
     par=[]
     for i,prod in enumerate(all_products):
         par.append(part.objects.filter(product=prod.id))
