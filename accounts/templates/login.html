@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %} {% load staticfiles %} {% block content %}
+<div class="gtco-services gtco-section">
+    <div class="gtco-container">
+        <form class="form-horizontal" action="{% url 'accounts:login' %}">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Username or Email:</label>
+                <div class="col-sm-10">
+                    <input type="user_email" class="form-control" id="user_email" placeholder="Enter credentials" name="user_email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Password:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="remember"> Remember me</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

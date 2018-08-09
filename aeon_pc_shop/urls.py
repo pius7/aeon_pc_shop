@@ -18,10 +18,15 @@ from django.contrib import admin
 from home import urls as urls_home
 from parts import urls as part_urls
 from pc_builder import urls as builder_urls
+from accounts import urls as accounts_urls
+from .settings import MEDIA_ROOT
+from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls, name=''),
-    url(r'^', include(urls_home), name='home'),
-    url(r'^parts/', include(part_urls), name='part'),
-    url(r'^builder/', include(builder_urls), name='builder'),
+    url(r'^', include(urls_home, namespace='home'), name='home'),
+    url(r'^parts/', include(part_urls, namespace='part'), name='part'),
+    url(r'^accounts/', include(accounts_urls, namespace='accounts'), name='accounts'),
+    url(r'^builder/', include(builder_urls, namespace='builder'), name='builder'),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]

@@ -14,7 +14,7 @@ class parts_url(models.Model):
         
 class part(models.Model):
     product = models.ForeignKey(parts_url, blank=False, related_name='part_info')
-    image = models.ImageField(upload_to='images', max_length=None)
+    image = models.ImageField(upload_to='media/images', max_length=None)
     description = models.TextField()
     price = models.DecimalField(max_digits=9, decimal_places=2, null=True)
     rating = models.IntegerField(blank=False, default = 1)
@@ -26,5 +26,3 @@ class part(models.Model):
     
     def __str__(self):
         return self.product.name
-    
-    

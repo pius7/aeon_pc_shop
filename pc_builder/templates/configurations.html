@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %} {% load staticfiles %} {% block content %}
+<div class="gtco-section gtco-products">
+    <div class="gtco-container">
+        {% for product in products %}
+
+        <div class="col-sm-6 col-md-4 card" style="height: 550px;">
+            <div class="thumbnail" style="height: 530px;">
+                <img height='400' width='400' src="{{MEDIA_URL}}{{product.image}}" alt="">
+
+                <h4 class="pull-right">€{{product.price}}</h4>
+                <h4><a href="{% url 'builder:compare_item' %}">{{product.product}}</a>
+                </h4>
+            </div>
+            <div class="ratings">
+                <p class="pull-right"></p>
+                <p>
+                    <span class="text-warning"></span>
+                </p>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
